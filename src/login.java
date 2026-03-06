@@ -14,12 +14,10 @@ public class login {
             System.out.println("You are logged in");
         }
         else{
-            System.out.println("Nice try but you failed");
+            System.out.println("Please try again your pass Key is incorrect.");
         }
 
         Input.close();
-
-
 
     }
 }
