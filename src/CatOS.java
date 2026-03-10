@@ -62,10 +62,12 @@ public class CatOS {
         JFrame mainWindow = new JFrame();
         JToolBar toolBar = new JToolBar();
         JButton shutDown = new JButton();
+        JButton settings = new JButton();
 
         // Main Window Configuration
         mainWindow.setTitle("CatOS");
-        mainWindow.setSize(300, 300);
+        mainWindow.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        mainWindow.setMinimumSize(new Dimension(300, 300));
         mainWindow.getContentPane().setBackground(Color.CYAN);
         mainWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -75,12 +77,30 @@ public class CatOS {
 
         // ShutDown Button Configuration
         toolBar.add(shutDown);
-        shutDown.setSize(35, 35);
+        shutDown.setPreferredSize(new Dimension(35, 35));
         shutDown.setText("ShutDown");
         shutDown.addActionListener(e -> {
             System.exit(0);
-                });
+        });
+
+        // SettingsButton configurations
+        toolBar.add(settings);
+        settings.setPreferredSize(new Dimension(35, 35));
+        settings.setText("Settings");
+        settings.addActionListener(e -> {
+            SettingsGUI();
+        });
+
 
         mainWindow.setVisible(true);
+    }
+
+    public static void SettingsGUI() {
+        JFrame settingsWindow = new JFrame();
+
+        // SettingsWindow Setup
+        settingsWindow.setTitle("CatOS Settings");
+        settingsWindow.setSize(300, 300);
+        settingsWindow.setVisible(true);
     }
 }
