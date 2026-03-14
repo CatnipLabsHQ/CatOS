@@ -6,7 +6,7 @@ public class CatOS {
 
     public static void main(String[] args) {
         LoginGUI();
-        DesktopGUI();
+        // DesktopGUI gets called in line 45
     }
 
     public static void LoginGUI() {
@@ -42,6 +42,7 @@ public class CatOS {
 
             if (inputPassKey == passKey) {
                 loginFrame.dispose();
+                DesktopGUI();
             }
             else {
                 System.exit(0);
@@ -90,7 +91,6 @@ public class CatOS {
         settings.addActionListener(e -> {
             SettingsGUI();
         });
-
 
         mainWindow.setVisible(true);
     }
