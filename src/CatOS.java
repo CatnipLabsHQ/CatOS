@@ -37,10 +37,10 @@ public class CatOS {
         loginButton.addActionListener(e -> {
             Scanner userLogin = new Scanner(passField.getText());
 
-            int  inputPassKey = userLogin.nextInt();
-            int passKey = 1234;
+            String  inputPassKey = userLogin.next();
+            String passKey = "1234SUS";
 
-            if (inputPassKey == passKey) {
+            if (inputPassKey.equals(passKey)) {
                 loginFrame.dispose();
                 DesktopGUI();
             }
